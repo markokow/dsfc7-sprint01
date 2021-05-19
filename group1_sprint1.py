@@ -10,8 +10,9 @@ warnings.filterwarnings('ignore')
 
 import streamlit.components.v1 as components
 
-#import page_test
-#page_test.hello()
+## Modular pages
+import page_test
+page_test.hello()
 
 hide_streamlit_style = """
             <style>
