@@ -10,10 +10,8 @@ warnings.filterwarnings('ignore')
 
 import streamlit.components.v1 as components
 
-## Modular pages
-import page_test
-page_test.hello()
-
+## Extra configs
+st.set_page_config(page_title="DSFC7 Group 1 - Sprint 01")
 hide_streamlit_style = """
             <style>
             #MainMenu {visibility: hidden;}
@@ -21,6 +19,15 @@ hide_streamlit_style = """
             </style>
             """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
+## End of Extra configs
+
+## Modular pages
+import page_test
+page_test.hello()
+
+
+
+
 
 # pip install pillow
 from PIL import Image
