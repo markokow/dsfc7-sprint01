@@ -22,18 +22,16 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 ## End of Extra configs
 
 ## Modular pages
-import page_test
-page_test.hello()
+#import page_test
+#page_test.hello()
 
 
-
-
-
+# Example how to load Images
 # pip install pillow
 from PIL import Image
 image = Image.open('./images/sunrise.jpg.jpg')
 st.image(image, caption='Sunrise by the mountains', use_column_width=False, width=350)
-
+# end of Image load example
 
 ###### DATA Loading
 # Create the 6 data frames per csv file (Upload the CSV files first!)
@@ -55,26 +53,65 @@ df = pd.read_csv("schools_combined.csv")
 st.sidebar.title("Group 1 - Sprint 01")
 st.sidebar.header("Student Enrollment Retention Situation In the Philippines")
 
+
 ## Always present
 st.header("Student Enrollment Retention Situation In the Philippines")
 
 ### Sprint Codes
-page_nav = st.sidebar.radio('Navigation', ['Introduction', 'Data Information', 'Methodology', 'EDA', 'Cluster Analysis', 'Other Cluster Insights', 'Conclusion and Recommendations'])
+page_nav = st.sidebar.radio('Navigation', ['Introduction', 'Data Information', 'Methodology', 'Exploratory Data Analysis', 'Cluster Analysis', 'Other Cluster Insights', 'Conclusion and Recommendations'])
 
 ## Page codes now for the sprint
-def page_Overview():
+def page_Intro():
     st.title('Introduction')
+    st.text("lorem ipsum")
     st.markdown("Lorem ipsum")
 
 def page_Data():
     st.title('Data Information')
+    st.text("lorem ipsum")
     st.markdown("")
 
+def page_Methodology():
+    st.title('Methodology')
+    st.text("")
+    
+def page_EDA():
+    st.title('Exploratory Data Analysis')
+    st.text("")
+    
+def page_Cluster01():
+    st.title('Cluster Analysis')
+    st.text("")
+    
+def page_Cluster02():
+    st.title('Other Cluster Insights')
+    st.text("")
+    
+def page_Conclusion():
+    st.title("Conclusion")
+    st.text("")
+    
+def page_Recommendation():
+    st.title("Recommenation")
+    st.text("")
+    
+    
 ## Page switch
 if page_nav == 'Introduction':
-    page_Overview()
+    page_Intro()
 elif page_nav == 'Data Information':
     page_Data()
+elif page_nav == 'Methodology':
+    page_Methodology()
+elif page_nav == 'Exploratory Data Analysis':
+    page_EDA()
+elif page_nav == 'Cluster Analysis':
+    page_Cluster01()
+elif page_nav == 'Other Cluster Insights':
+    page_Cluster02()
+elif page_nav == 'Conclusion and Recommendations':
+    page_Conclusion()
+    page_Recommendation()
 
     
 # ()*)(*)(*)(*)(*)(*)(*)(*)(*)(*)(*)(*)(*)(*)(*)(*)(*)(*)
@@ -182,3 +219,16 @@ elif my_page == 'page 5':
     page_5()
 else:
     print("")
+    
+## Credits
+st.sidebar.markdown("""
+# The Team
+A data app created by:
+- Marko
+- Miggy
+- Matthew
+- Robby
+- Rowen
+
+*Eskwelabs Data Science Fellows Cohort 7*
+""")
