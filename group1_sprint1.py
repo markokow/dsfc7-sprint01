@@ -59,27 +59,27 @@ st.sidebar.header("Student Enrollment Retention Situation In the Philippines")
 st.header("Student Enrollment Retention Situation In the Philippines")
 
 ### Sprint Codes
-page_nav = st.sidebar.radio('Navigation', ['Overview', 'Data', 'page 3', 'page 4', 'page 5'])
+page_nav = st.sidebar.radio('Navigation', ['Introduction', 'Data Information', 'Methodology', 'EDA', 'Cluster Analysis', 'Other Cluster Insights', 'Conclusion and Recommendations'])
 
 ## Page codes now for the sprint
 def page_Overview():
-    st.title('Overview')
+    st.title('Introduction')
     st.markdown("Lorem ipsum")
 
 def page_Data():
-    st.title('Data')
+    st.title('Data Information')
     st.markdown("")
 
 ## Page switch
-if page_nav == 'Overview':
+if page_nav == 'Introduction':
     page_Overview()
-elif page_nav == 'Data':
+elif page_nav == 'Data Information':
     page_Data()
 
     
 # ()*)(*)(*)(*)(*)(*)(*)(*)(*)(*)(*)(*)(*)(*)(*)(*)(*)(*)
 ### GUIDE Code to be removed
-my_page = st.sidebar.radio('EDA Navigation', ['None','page 1', 'page 2', 'page 3', 'page 4', 'page 5'])
+my_page = st.sidebar.radio('Data Navigation', ['None','page 1', 'page 2', 'page 3', 'page 4', 'page 5'])
 
 
 ## Pages code
