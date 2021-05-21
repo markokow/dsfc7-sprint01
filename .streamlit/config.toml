@@ -197,11 +197,20 @@ primaryColor = "#d33682"
 # Background color for the main content area.
 #backgroundColor =
 #backgroundColor = "#002b36"
-backgroundColor = "#48BF91"
+#backgroundColor = "#48BF91"
+#backgroundColor = "#2F329F"
+#backgroundColor = "#5D8AA8"
+#backgroundColor = "#007BA7"
+backgroundColor = "#008080"
 
 # Background color used for the sidebar and most interactive widgets.
 #secondaryBackgroundColor =
-secondaryBackgroundColor = "#586e75"
+#secondaryBackgroundColor = "#586e75"
+#secondaryBackgroundColor = "#2F329F"
+#secondaryBackgroundColor = "#00000"
+secondaryBackgroundColor = "#00000"
+#secondaryBackgroundColor = "#5D8AA8"
+#secondaryBackgroundColor = "#FF7F50"
 
 # Color used for almost all text.
 #textColor =

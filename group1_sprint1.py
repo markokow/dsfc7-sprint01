@@ -29,8 +29,8 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 # Example how to load Images
 # pip install pillow
 from PIL import Image
-image = Image.open('./images/sunrise.jpg.jpg')
-st.image(image, caption='Sunrise by the mountains', use_column_width=False, width=350)
+#image = Image.open('./images/sunrise.jpg.jpg')
+#st.image(image, caption='Sunrise by the mountains', use_column_width=False, width=350)
 # end of Image load example
 
 ###### DATA Loading
@@ -46,34 +46,65 @@ enrol_s = pd.read_csv("./education_analysis/work/Enrollment Master Data_2015_S.c
 region_stats = pd.read_csv("./education_analysis/work/regional_stats.csv")
 
 df = pd.read_csv("schools_combined.csv")
+
+df_sped = pd.read_csv("./education_analysis/schools_combined_SPED.csv")
 ######  End DATA Loading
 
 
 ## Side bars
-st.sidebar.title("Group 1 - Sprint 01")
-st.sidebar.header("Student Enrollment Retention Situation In the Philippines")
-
+#st.sidebar.title("Group 1 - Sprint 01")
+#st.sidebar.header("Student Enrollment Retention Situation In the Philippines")
+st.sidebar.title("Resource Allocation of SPED Schools in the Philippines")
 
 ## Always present
-st.header("Student Enrollment Retention Situation In the Philippines")
+#st.header("Student Enrollment Retention Situation In the Philippines")
 
 ### Sprint Codes
 page_nav = st.sidebar.radio('Navigation', ['Introduction', 'Data Information', 'Methodology', 'Exploratory Data Analysis', 'Cluster Analysis', 'Other Cluster Insights', 'Conclusion and Recommendations'])
 
 ## Page codes now for the sprint
 def page_Intro():
-    st.title('Introduction')
-    st.text("lorem ipsum")
-    st.markdown("Lorem ipsum")
+    #st.title('Introduction')
+    #st.header("Resource Allocation of SPED Schools in the Philippines")
+    st.header("Resource Allocation of SPED Schools ")
+    st.header("in the Philippines")
+    #st.markdown("Lorem ipsum")
+    image1 = Image.open('./images/slide1_teacher.png')
+    image2 = Image.open('./images/slide1_wheelchair.png')
+    #st.image(image1, caption='', use_column_width=False, width=350)
+    #st.image(image2, caption='', use_column_width=False, width=350)
+    st.markdown("""
+Education is one of the most important human rights. It serves as a capital investment and equalizer for everyone. The right to education is practiced starting from the formative years of a child all throughout their life. However, not all children will have the chance to exercise this opportunity. And this opportunity to avail education should not be as challenged as to whatever mental and physical status they may present in.
 
+Inclusive education also called inclusion is an education that includes everyone. This covers non-disabled and disabled children with special educational needs and to be able to provide them with fair and safe learning environment.
+    """)
+    col1, col2 = st.beta_columns(2)
+    col1.image(image1, use_column_width=True) # you can also use col1.header("Title")
+    col2.image(image2, use_column_width=True) # you can also use col2.header("Title")
+    st.markdown("""
+The Philippine Constitution, the Child and Welfare  Code (PD 603), the Enhanced Basic Education Act (RA 105333), and the Magna Carta for Disabled Persons (RA 7277) mandated the adoption of IE (Inclusive Education) approach in the Philippine Education system.
+
+Inclusive Education in the form of Special Education program is a good way to cater the diversity of needs for all learners and lessen the challenges in achieving education for every status.
+    """)
+    st.markdown("""
+According to the Philippine Statistics Authority, 16 per thousand of the country’s population had disability. In the 2010 Census of Population and Housing, the recorded persons with disabilities was 935, 551 person, which was 1.23 percent of the total household population. 
+    """)
+    st.markdown("""
+From the 2009 report Inclusive Education as Strategy for Increasing Participation Rate of Children done by the Department of Education, the Philippines has only served 2% of the targeted 2.2 million children with disabilities in the country who live without access to a basic human right: the right to education.
+    """)
+    
 def page_Data():
     st.title('Data Information')
     st.text("lorem ipsum")
     st.markdown("")
+    st.dataframe(df_sped.iloc[:,1:])
 
 def page_Methodology():
     st.title('Methodology')
-    st.text("")
+    st.markdown("""
+We consolidated seven source data from the Department of Education. Then proceeded to cleaning the datasets including dropping the zero and missing values. To produce a certain result, we concatenated and merged some chosen datasets and filtered it to our target study.
+In getting a good grip of our raw data for us to show an accurate model, we engineered 5 features in answering our target study about SPED. Ratios exclusive only to SPED (such as the student-teacher ratio, student per school room ratio, and MOOE per teacher ratio, MOOE per student ratio, and MOOE per room ratio). We then proceeded to prepare the dataset and scaled it to feed to our different models. 
+    """)
     
 def page_EDA():
     st.title('Exploratory Data Analysis')
@@ -96,7 +127,7 @@ def page_Recommendation():
     st.text("")
     
     
-## Page switch
+## Page switching
 if page_nav == 'Introduction':
     page_Intro()
 elif page_nav == 'Data Information':
@@ -222,13 +253,16 @@ else:
     
 ## Credits
 st.sidebar.markdown("""
-# The Team
+# Group 1 - Sprint 01
+## The Team
 A data app created by:
 - Marko
-- Miggy
-- Matthew
-- Robby
-- Rowen
+- Joshua Miguel Bernardino
+- Matthew Chan
+- Robby Jean J. Pombo
+- Rowen Remis R. Iral
 
 *Eskwelabs Data Science Fellows Cohort 7*
+
+*Mentored by Patrick Juan*
 """)
