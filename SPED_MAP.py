@@ -62,13 +62,13 @@ if my_page=="Interactive Map":
 
     folium_static(mymap_cluster)
 
-if my_page=="Heat Maps":
+if my_page=="SPED Location Distribution Maps":
     #GEOPANDAS PART
 
-    option = st.sidebar.selectbox('Which Urban Type do you like best?',['All', 'Urban', 'Partially Urban', 'Rural'])
+    option = st.sidebar.selectbox('Please Select School Urban Type',['All', 'Urban', 'Partially Urban', 'Rural'])
 
     if option == "All":
-        st.title("Geospatial Analysis of SPED Schools")
+        st.title("Geographical Distribution of SPED Schools in the Philippines")
         ## OVERALL SPED
 
         # set a variable that will call whatever column we want to visualise on the map
@@ -86,7 +86,7 @@ if my_page=="Heat Maps":
         st.pyplot(fig)
 
     elif option == "Urban":
-        st.title("Geospatial Analysis of Urban SPED Schools")
+        st.title("Geographical Distribution of SPED Schools Located at Urban Areas")
             #SPED URBAN
         sped_province_U = sped_urban.groupby("school.province")["school.id"].nunique().reset_index()
         merged_data_U = pd.merge(provice_data,sped_province_U,left_on="PROVINCE",right_on="school.province",how ="left").fillna(0)
@@ -106,7 +106,7 @@ if my_page=="Heat Maps":
         st.pyplot(fig)
 
     elif option == "Partially Urban":
-        st.title("Geospatial Analysis of Partially Urban SPED Schools")
+        st.title("Geographical Distribution of SPED Schools Located at Partially Urban Areas")
         #SPED PARTIAL URBAN
         sped_province_PU = sped_part_urban.groupby("school.province")["school.id"].nunique().reset_index()
         merged_data_PU = pd.merge(provice_data,sped_province_PU,left_on="PROVINCE",right_on="school.province",how ="left").fillna(0)
@@ -126,7 +126,7 @@ if my_page=="Heat Maps":
         st.pyplot(fig)
 
     elif option == "Rural":
-        st.title("Geospatial Analysis of Rural SPED Schools")
+        st.title("Geographical Distribution of SPED Schools Located at Rural Areas")
         #SPED RURAL
         sped_province_R = sped_rural.groupby("school.province")["school.id"].nunique().reset_index()
         merged_data_R = pd.merge(provice_data,sped_province_R,left_on="PROVINCE",right_on="school.province",how ="left").fillna(0)
