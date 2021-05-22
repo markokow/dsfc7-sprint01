@@ -157,8 +157,7 @@ def page_EDA():
     image1 = Image.open('./images/sped_vs_non-sped.png')
     st.image(image1, caption='', use_column_width=False, width=500)
     st.markdown("""
-There are around 45,000 schools for non-SPED  which is comparatively high versus
-SPED Schools which is around less than 1, 500.
+There are around 45,000 schools for non-SPED which is comparatively high versus SPED Schools which is around less than 1, 500. SPED schools are approximately 3% of the total schools in the Philippines.
     """)
     st.text("")
     st.text("")
@@ -169,13 +168,17 @@ SPED Schools which is around less than 1, 500.
     """)
     image1 = Image.open('./images/sped_based_on_urban_types.png')
     image2 = Image.open('./images/sped_school_heatmap.png')
-    st.image(image2, caption='', use_column_width=False, width=350)
-    st.image(image1, caption='', use_column_width=False, width=350)
+    st.image(image1, caption='', use_column_width=False, width=500)
+    st.image(image2, caption='', use_column_width=False, width=500)
     st.markdown("""
--Majority are located at areas that are urban or partially urban
--SPED schools are concentrated mainly at Luzon
+### Geographical location distribution of SPED schools
 
-**Top 5: NCR, Pangasinan, Batangas, Zamboanga del Sur, Quezon, and Cebu**
+Majority of schools are located in more developed areas which are urban and partially urban. It implies that SPED facilities are least accessible to rural and far flung places.
+
+As for the location of SPED schools per province, most are located in Luzon, with concentrations as well in Western and Central Visayas, and some parts of Mindanao.
+
+
+**Top 5 provinces with most SPED schools are at NCR, Pangasinan, Batangas, Zamboanga del Sur, Quezon**
     """)
     st.text('')
     st.text('')
