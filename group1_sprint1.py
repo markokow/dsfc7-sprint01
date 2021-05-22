@@ -65,16 +65,16 @@ page_nav = st.sidebar.radio('Navigation', ['Introduction', 'Data Information', '
 ## Page codes now for the sprint
 def page_Intro():
     #st.title('Introduction')
-    #st.header("Resource Allocation of SPED Schools in the Philippines")
-    st.header("Resource Allocation of SPED Schools ")
-    st.header("in the Philippines")
+    st.header("Resource Allocation of SPED Schools in the Philippines")
+    #st.header("Resource Allocation of SPED Schools ")
+    #st.header("in the Philippines")
     #st.markdown("Lorem ipsum")
     image1 = Image.open('./images/slide1_teacher.png')
     image2 = Image.open('./images/slide1_wheelchair.png')
     #st.image(image1, caption='', use_column_width=False, width=350)
     #st.image(image2, caption='', use_column_width=False, width=350)
     st.markdown("""
-Education is one of the most important human rights. It serves as a capital investment and equalizer for everyone. The right to education is practiced starting from the formative years of a child all throughout their life. However, not all children will have the chance to exercise this opportunity. And this opportunity to avail education should not be as challenged as to whatever mental and physical status they may present in.
+Education is one of the most important human rights. It serves as a capital investment and equalizer for everyone. The right to education is practiced starting from the formative years of a child all throughout their life. However, not all children will have the chance to exercise this right. This opportunity  to avail education should not be as challenged as to whatever mental and physical status they may present in.
 
 Inclusive education also called inclusion is an education that includes everyone. This covers non-disabled and disabled children with special educational needs and to be able to provide them with fair and safe learning environment.
     """)
@@ -87,20 +87,37 @@ The Philippine Constitution, the Child and Welfare  Code (PD 603), the Enhanced 
 Inclusive Education in the form of Special Education program is a good way to cater the diversity of needs for all learners and lessen the challenges in achieving education for every status.
     """)
     st.markdown("""
-According to the Philippine Statistics Authority, 16 per thousand of the country’s population had disability. In the 2010 Census of Population and Housing, the recorded persons with disabilities was 935, 551 person, which was 1.23 percent of the total household population. 
+According to the Philippine Statistics Authority, **16 per thousand** of the country’s population had disability. In the 2010 Census of Population and Housing, the recorded persons with disabilities was 935, 551 person, which was 1.23 percent of the total household population. 
     """)
     st.markdown("""
-From the 2009 report Inclusive Education as Strategy for Increasing Participation Rate of Children done by the Department of Education, the Philippines has only served 2% of the targeted 2.2 million children with disabilities in the country who live without access to a basic human right: the right to education.
+From the 2009 report Inclusive Education as Strategy for Increasing Participation Rate of Children done by the Department of Education, the Philippines has only served **2% of the targeted 2.2 million children with disabilities** in the country who live without access to a basic human right: the right to education.
     """)
     
+    st.markdown("""
+## Objective
+
+To use clustering to help assess how resource allocation for SPED schools should be prioritized in the country
+
+
+    """)
 def page_Data():
     st.title('Data Information')
-    st.text("lorem ipsum")
+    #st.text("lorem ipsum")
     st.markdown("")
-    st.dataframe(df_sped.iloc[:,1:])
+    image1 = Image.open('./images/slide2_data_information.png')
+    st.image(image1, caption='')
+             #, use_column_width=False, width=350)
+    #st.dataframe(df_sped.iloc[:,1:])
+    st.markdown("""
+Data sources: [Department of Education](https://www.deped.gov.ph/)
+    """)
 
 def page_Methodology():
     st.title('Methodology')
+    st.text('')
+    image1 = Image.open('./images/methodology.png')
+    st.image(image1, caption='')
+    st.text('')
     st.markdown("""
 We consolidated seven source data from the Department of Education. Then proceeded to cleaning the datasets including dropping the zero and missing values. To produce a certain result, we concatenated and merged some chosen datasets and filtered it to our target study.
 In getting a good grip of our raw data for us to show an accurate model, we engineered 5 features in answering our target study about SPED. Ratios exclusive only to SPED (such as the student-teacher ratio, student per school room ratio, and MOOE per teacher ratio, MOOE per student ratio, and MOOE per room ratio). We then proceeded to prepare the dataset and scaled it to feed to our different models. 
@@ -109,23 +126,180 @@ In getting a good grip of our raw data for us to show an accurate model, we engi
 def page_EDA():
     st.title('Exploratory Data Analysis')
     st.text("")
+    # Start EDA
+    image1 = Image.open('./images/sped_vs_non-sped.png')
+    st.image(image1, caption='', use_column_width=False, width=500)
+    st.markdown("""
+There are around 45,000 schools for non-SPED  which is comparatively high versus
+SPED Schools which is around less than 1, 500.
+    """)
+    st.text("")
+    st.text("")
+    
+    # Sped Schools
+    st.markdown("""
+## SPED schools location distribution:
+    """)
+    image1 = Image.open('./images/sped_based_on_urban_types.png')
+    image2 = Image.open('./images/sped_school_heatmap.png')
+    st.image(image2, caption='', use_column_width=False, width=350)
+    st.image(image1, caption='', use_column_width=False, width=350)
+    st.markdown("""
+-Majority are located at areas that are urban or partially urban
+-SPED schools are concentrated mainly at Luzon
+
+**Top 5: NCR, Pangasinan, Batangas, Zamboanga del Sur, Quezon, and Cebu**
+    """)
+    st.text('')
+    st.text('')
+    
+    # MOOE SPED 
+    image1 = Image.open('./images/mooe_sped_02.png')
+    st.image(image1, caption='', use_column_width=False, width=500)
+    
+    st.markdown("""
+On average, SPED Schools have a much higher MOOE than non SPED Schools
+    """)
+    
+    # MOOE SPED by Urban Type
+    st.markdown("""
+## MOOE and Number of Students grouped by School Urban Type
+    """)
+    image1 = Image.open('./images/mooe_urban.png')
+    st.image(image1, caption='', use_column_width=False, width=700)
+    
+    st.markdown("""
+    """)
+    
+    # MOOE SPED without Outliers by Urban Type
+    st.markdown("""
+### Zooming into SPED's MOOE without outlier by Urban Type
+    """)
+    image1 = Image.open('./images/boxplot_sped_grouped_by_urban_type_no_outlier.png')
+    st.image(image1, caption='', use_column_width=False, width=700)
+    
+    st.markdown("""
+MOOE is divided roughly equally, with urban schools getting the most MOOE by only a small amount
+    """)
+    
+    # MOOE is distributed more or less evenly among city income groups with only a bit of discrepancy
+    image1 = Image.open('./images/sped_no_outlier_grouped_by_city_income.png')
+    st.image(image1, caption='', use_column_width=False, width=700)
+    
+    st.markdown("""
+MOOE is distributed more or less evenly among city income groups with only a bit of discrepancy
+    """)
+    
+    # MOOE SPED by Region
+    image1 = Image.open('./images/sped_mooe_no_outlier_grouped_by_region.png')
+    st.image(image1, caption='', use_column_width=False, width=700)
+    
+    st.markdown("""
+MOOE is distributed more or less evenly among the regions with only a bit of discrepancy
+    """)
+    
+    # Cluster Radar
+    st.markdown("""
+## Radar Charts of Cluster
+    """)
+    image1 = Image.open('./images/radarchar_clusters.png')
+    st.image(image1, caption='', use_column_width=False, width=700)
+    
+    st.markdown("""
+**Cluster 0** - Low demand, low resources, and low financial support
+
+**Cluster 1** - Low demand, low resources but high financial support
+
+**Cluster 2** - High demand, High financial support, but low resources
+    """)
+    
+    # MOOE vs Students
+    image1 = Image.open('./images/sped_clusters_mooe_students.png')
+    st.image(image1, caption='', use_column_width=False, width=700)
+    
+    st.markdown("""
+**Cluster 1** has moderate MOOE allocation whilst having the most number of students. **Cluster 0** has the least MOOE allocated while **cluster 2** has the most MOOE allocated despite having the least number of students.
+    """)
+    
+    # SPED schools by Cluster
+    image1 = Image.open('./images/sped_schools_cluster.png')
+    st.image(image1, caption='', use_column_width=False, width=700)
+    
+    st.markdown("""
+**Cluster 1** has moderate MOOE allocation whilst having the most number of students. **Cluster 0** has the least MOOE allocated while **cluster 2** has the most MOOE allocated despite having the least number of students.
+    """)
+    
+    # 
+    image1 = Image.open('./images/sped_teachers_rooms.png')
+    st.image(image1, caption='', use_column_width=False, width=700)
+    
+    st.markdown("""
+For the teachers, there is no significant difference among them. Cluster 0 has the least rooms allocated for its student while cluster 2 enjoys having the most rooms provided. However...
+    """)
     
 def page_Cluster01():
     st.title('Cluster Analysis')
     st.text("")
+        # Cluster Radar
+    st.markdown("""
+## Radar Charts of Cluster
+    """)
+    st.markdown("""
+Majority of SPED schools are in cluster zero with low resources and financial support. It consists of 83% of SPED schools in the country. This illustrates an imbalance in allocating resources. 
+    """)
+    image1 = Image.open('./images/radarchar_clusters.png')
+    st.image(image1, caption='', use_column_width=False, width=700)
+    
+    st.markdown("""
+**Cluster 0** - Low demand, low resources, and low financial support
+
+**Cluster 1** - Low demand, low resources but high financial support
+
+**Cluster 2** - High demand, High financial support, but low resources
+    """)
     
 def page_Cluster02():
     st.title('Other Cluster Insights')
     st.text("")
     
+    # MOOE vs Students
+    image1 = Image.open('./images/sped_clusters_mooe_students.png')
+    st.image(image1, caption='', use_column_width=False, width=700)
+    
+    st.markdown("""
+**Cluster 1** has moderate MOOE allocation whilst having the most number of students. **Cluster 0** has the least MOOE allocated while **cluster 2** has the most MOOE allocated despite having the least number of students.
+    """)
+    
+    # 
+    image1 = Image.open('./images/sped_teachers_rooms.png')
+    st.image(image1, caption='', use_column_width=False, width=700)
+    
+    st.markdown("""
+For the teachers, there is no significant difference among them. Cluster 0 has the least rooms allocated for its student while cluster 2 enjoys having the most rooms provided. However...
+    """)
+    # SPED schools by Cluster
+    image1 = Image.open('./images/sped_schools_cluster.png')
+    st.image(image1, caption='', use_column_width=False, width=700)
+    
+    st.markdown("""
+… cluster 0 has the most SPED schools with over 1000 schools while cluster 2 has the least, garnering less than 10 schools.
+    """)
+    
 def page_Conclusion():
-    st.title("Conclusion")
-    st.text("")
-    
-def page_Recommendation():
-    st.title("Recommenation")
-    st.text("")
-    
+    st.title("Conclusion and Recommendations")
+    st.markdown("""
+## Conclusion
+
+-Despite having more MOOE allocation than non SPED schools, there is an uneven distribution of resources for SPED. In particular, majority of SPED schools suffer from lack of resources while the minority has the most allocated resources. 
+
+## Recommendation
+
+-This study could serve as a benchmark since the data was dated on year 2015.
+
+-There needs to be better assessment on how resources and budgeting should be allocated among SPED schools.
+
+-Future studies may benefit in looking into other discrepancies in resources (school supplies, books, learning aids)
+    """)
     
 ## Page switching
 if page_nav == 'Introduction':
@@ -142,12 +316,12 @@ elif page_nav == 'Other Cluster Insights':
     page_Cluster02()
 elif page_nav == 'Conclusion and Recommendations':
     page_Conclusion()
-    page_Recommendation()
 
     
 # ()*)(*)(*)(*)(*)(*)(*)(*)(*)(*)(*)(*)(*)(*)(*)(*)(*)(*)
 ### GUIDE Code to be removed
-my_page = st.sidebar.radio('Data Navigation', ['None','page 1', 'page 2', 'page 3', 'page 4', 'page 5'])
+#my_page = st.sidebar.radio('Data Navigation', ['None','page 1', 'page 2', 'page 3', 'page 4', 'page 5'])
+my_page = []
 
 
 ## Pages code
@@ -253,10 +427,8 @@ else:
     
 ## Credits
 st.sidebar.markdown("""
-# Group 1 - Sprint 01
 ## The Team
-A data app created by:
-- Marko
+- Jon Marco Francisco
 - Joshua Miguel Bernardino
 - Matthew Chan
 - Robby Jean J. Pombo
