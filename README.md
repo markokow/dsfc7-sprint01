@@ -20,11 +20,12 @@ http://datadev.bullandbearcapital.com:8501/ [Mirror Site]
 
 
 ## The Team
--Jon Marco Francisco
--Joshua Miguel Bernardino
--Matthew Chan
--Robby Jean J. Pombo
--Rowen Remis R. Iral
+
+- Jon Marco Francisco
+- Joshua Miguel Bernardino
+- Matthew Chan
+- Robby Jean J. Pombo
+- Rowen Remis R. Iral
 
 *Eskwelabs Data Science Fellows Cohort 7*
 
