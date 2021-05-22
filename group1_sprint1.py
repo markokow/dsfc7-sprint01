@@ -198,45 +198,6 @@ MOOE is distributed more or less evenly among city income groups with only a bit
 MOOE is distributed more or less evenly among the regions with only a bit of discrepancy
     """)
     
-    # Cluster Radar
-    st.markdown("""
-## Radar Charts of Cluster
-    """)
-    image1 = Image.open('./images/radarchar_clusters.png')
-    st.image(image1, caption='', use_column_width=False, width=700)
-    
-    st.markdown("""
-**Cluster 0** - Low demand, low resources, and low financial support
-
-**Cluster 1** - Low demand, low resources but high financial support
-
-**Cluster 2** - High demand, High financial support, but low resources
-    """)
-    
-    # MOOE vs Students
-    image1 = Image.open('./images/sped_clusters_mooe_students.png')
-    st.image(image1, caption='', use_column_width=False, width=700)
-    
-    st.markdown("""
-**Cluster 1** has moderate MOOE allocation whilst having the most number of students. **Cluster 0** has the least MOOE allocated while **cluster 2** has the most MOOE allocated despite having the least number of students.
-    """)
-    
-    # SPED schools by Cluster
-    image1 = Image.open('./images/sped_schools_cluster.png')
-    st.image(image1, caption='', use_column_width=False, width=700)
-    
-    st.markdown("""
-**Cluster 1** has moderate MOOE allocation whilst having the most number of students. **Cluster 0** has the least MOOE allocated while **cluster 2** has the most MOOE allocated despite having the least number of students.
-    """)
-    
-    # 
-    image1 = Image.open('./images/sped_teachers_rooms.png')
-    st.image(image1, caption='', use_column_width=False, width=700)
-    
-    st.markdown("""
-For the teachers, there is no significant difference among them. Cluster 0 has the least rooms allocated for its student while cluster 2 enjoys having the most rooms provided. However...
-    """)
-    
 def page_Cluster01():
     st.title('Cluster Analysis')
     st.text("")
