@@ -11,7 +11,7 @@ warnings.filterwarnings('ignore')
 import streamlit.components.v1 as components
 
 ## Extra configs
-st.set_page_config(page_title="DSFC7 Group 1 - Sprint 01")
+st.set_page_config(page_title="Resource Allocation of SPED Schools in the Philippines")
 hide_streamlit_style = """
             <style>
             #MainMenu {visibility: hidden;}
