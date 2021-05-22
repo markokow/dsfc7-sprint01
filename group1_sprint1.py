@@ -87,7 +87,7 @@ st.sidebar.title("Resource Allocation of SPED Schools in the Philippines")
 #st.header("Student Enrollment Retention Situation In the Philippines")
 
 ### Sprint Codes
-page_nav = st.sidebar.radio('Navigation', ['Introduction', 'Data Information', 'Methodology', 'Exploratory Data Analysis', 'Cluster Analysis', 'Other Cluster Insights', 'Conclusion and Recommendations', 'Interactive Map', 'Heat Maps'])
+page_nav = st.sidebar.radio('Navigation', ['Introduction', 'Data Information', 'Methodology', 'Exploratory Data Analysis', 'Interactive Map', 'Heat Maps', 'Cluster Analysis', 'Other Cluster Insights', 'Conclusion and Recommendations'])
 
 ## Page codes now for the sprint
 def page_Intro():
