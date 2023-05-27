@@ -36,7 +36,7 @@ from PIL import Image
 ###### DATA Loading
 # Create the 6 data frames per csv file (Upload the CSV files first!)
 rooms = pd.read_csv("./education_analysis/work/Rooms data.csv")
-schools_loc = pd.read_csv("./education_analysis/work/Schools Location Data.csv")
+schools_loc = pd.read_csv("./education_analysis/work/Schools Location Data.csv", encoding='latin-1')
 teachers = pd.read_csv("./education_analysis/work/Teachers data.csv")
 mooe = pd.read_csv("./education_analysis/work/MOOE data.csv")
 masterlist= pd.read_csv("./education_analysis/work/Masterlist of Schools.csv")
@@ -105,7 +105,7 @@ Education is one of the most important human rights. It serves as a capital inve
 
 Inclusive education also called inclusion is an education that includes everyone. This covers non-disabled and disabled children with special educational needs and to be able to provide them with fair and safe learning environment.
     """)
-    col1, col2 = st.beta_columns(2)
+    col1, col2 = st.columns(2)
     col1.image(image1, use_column_width=True) # you can also use col1.header("Title")
     col2.image(image2, use_column_width=True) # you can also use col2.header("Title")
     st.markdown("""
